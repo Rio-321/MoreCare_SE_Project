@@ -1,0 +1,281 @@
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+/* background-image: url("/images/five.jpg"); */
+background-image: url("/images/seventeen3.jpg");
+/* background-image: url("/images/hundred_one.jpg"); */
+/* background-image: url("/images/thousand.jpg"); */
+
+background-size: cover;
+background-repeat: no-repeat;
+height: 100%;
+font-family: 'Numans', sans-serif;
+}
+
+/***************************************************************************************************/
+
+nav
+{
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    left: 465px;
+    width: 592px;
+    display: table;
+    text-align: center;
+    margin: 0 0;
+    transform: translateY(-50%);
+}
+
+nav a
+{
+    position: relative;
+    width: 33.333%;
+    display: table-cell;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+}
+
+nav a:before, nav a:after
+{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+	text-decoration: none;
+    transition: 0.2s ease transform;
+}
+
+nav a:before
+{
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+nav a:after
+{
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px
+}
+
+/* nav a:nth-child(1):before
+{
+    background-color: black;
+}
+
+nav a:nth-child(1):after
+{
+    background-color: black;
+}
+
+nav a:nth-child(2):before
+{
+    background-color: black;
+}
+
+nav a:nth-child(2):after
+{
+    background-color: black;
+}
+
+nav a:nth-child(3):before
+{
+    background-color: black;
+}
+
+nav a:nth-child(3):after
+{
+    background-color: black;
+}
+nav a:nth-child(4):before
+{
+    background-color: black;
+}
+
+nav a:nth-child(4):after
+{
+    background-color: black;
+}
+nav a:nth-child(5):before
+{
+    background-color: black;
+}
+
+nav a:nth-child(5):after
+{
+    background-color: black;
+} */
+
+#indicator
+{
+    position: absolute;
+    left: 29px;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.2s ease left;
+}
+
+nav a:hover
+{
+    color: #fff;
+	text-decoration: none;
+}
+
+nav a:hover:before, nav a:hover:after
+{
+    transform: scale(1);
+}
+
+nav a:nth-child(1):hover ~ #indicator
+{  
+    left: 29px;
+    background: linear-gradient(130deg, whitesmoke, whitesmoke);
+}
+
+nav a:nth-child(2):hover ~ #indicator
+{
+    /* left: 22%; */
+    left: 145px;
+    background: linear-gradient(130deg, whitesmoke, whitesmoke);
+}
+
+nav a:nth-child(3):hover ~ #indicator
+{
+    /* left: 41%; */
+    left: 268px;
+    background: linear-gradient(130deg, whitesmoke, whitesmoke);
+}
+nav a:nth-child(4):hover ~ #indicator
+{
+    /* left: 65%; */
+    left: 402px;
+    background: linear-gradient(130deg, whitesmoke, whitesmoke);
+}
+nav a:nth-child(5):hover ~ #indicator
+{
+    /* left: 85%; */
+    left: 515px;
+    background: linear-gradient(130deg, whitesmoke, whitesmoke);
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #000;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+  z-index: 125;
+}
+/*************************************************************************************************/
+
+.container{
+height: 100%;
+align-content: center;
+}
+
+.card{
+height: 500px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+/* background-color: rgba(207, 206, 206, 0.9); */
+}
+
+.social_icon span{
+font-size: 60px;
+margin-left: 10px;
+color: #FFC312;
+/* color: #ff0b0e; */
+}
+
+.social_icon span:hover{
+color: white;
+cursor: pointer;
+}
+
+.card-header h3{
+color: White;
+text-align: center;
+}
+
+.social_icon{
+position: absolute;
+right: 20px;
+top: -45px;
+}
+
+.input-group-prepend span{
+width: 50px;
+background-color: #FFC312;
+/* background-color: #ff0b0e; */
+/* background-color: #88e4fd; */
+color: black;
+border:0 !important;
+}
+
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+color: white;
+}
+
+.remember input
+{
+width: 20px;
+height: 20px;
+margin-left: 15px;
+margin-right: 5px;
+}
+
+.login_btn{
+color: black;
+background-color: #FFC312;
+/* background-color: #ff0b0e; */
+/* background-color: #88e4fd; */
+
+/* background-color: #385898; */
+
+width: 100px;
+
+
+}
+
+.login_btn:hover{
+color: black;
+background-color: white;
+}
+
+.links{
+color: white;
+}
+
+.links a{
+margin-left: 4px;
+}
