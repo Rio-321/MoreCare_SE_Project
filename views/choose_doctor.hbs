@@ -1,0 +1,109 @@
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/choose_doctor.css">
+
+<nav>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">SPECIALITIES</a>
+        <a href="#">GALLARY</a>
+        <a href="#">CONTACT</a>
+        <div id="indicator"></div>
+</nav>
+
+    <div class="container contact-form">
+        <form name="frm" id="myForm" method="get" action="https://www.google.com/">
+            <h4>Welcome {{userData.Name}} </h4>
+            <h5 style="margin-bottom:4%">Choose a Doctor </h5>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">S.No.</th>
+                        <th scope="col">Doctor Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Degree</th>
+                        <th scope="col">Select</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Srushti Bhosle</td>
+                        <td>srushtibhosle345@gmail.com</td>
+                        <td>MBBS MD</td>
+                        <td>
+                            <div>
+                                
+                                <button id="myBtn" type="submit" class="btn btn-success"  formaction="/products/doctor_selected/{{userData.id}}/doctorName/Srushti Bhosle/doctorEmail/srushtibhosle345@gmail.com/MBBS MD" formmethod="post">Select</button>
+                                
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Shashank Aggrawal</td>
+                        <td>shashankaggrawal2002@gmail.com</td>
+                        <td>MBBS DNB</td>
+                        <td>
+                            <div>
+                                <button id="myBtn" type="submit" class="btn btn-success" formaction="/products/doctor_selected/{{userData.id}}/doctorName/Shashank Aggrawal/doctorEmail/shashankaggrawal2002@gmail.com/MBBS DNB" formmethod="post">Select</button>
+                               
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Akshat Vijay</td>
+                        <td>akshatvijay998@gmail.com</td>
+                        <td>MBBS MS</td>
+                        <td>
+                            <div>
+                                <button id="myBtn" type="submit" class="btn btn-success" formaction="/products/doctor_selected/{{userData.id}}/doctorName/Akshat Vijay/doctorEmail/akshatvijay998@gmail.com/MBBS MS" formmethod="post">Select</button>
+                              
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>Gaurav Singhal</td>
+                        <td>gauravsinghal6678@gmail.com</td>
+                        <td>MBBS DGO</td>
+                        <td>
+                            <div>
+                                <button id="myBtn" type="submit" class="btn btn-success" formaction="/products/doctor_selected/{{userData.id}}/doctorName/Gaurav Singhal/doctorEmail/gauravsinghal6678@gmail.com/MBBS DGO" formmethod="post">Select</button>
+                              
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>Anuja Singh</td>
+                        <td>anujasingh9989@gmail.com</td>
+                        <td>MBBS MD</td>
+                        <td>
+                            <div>
+                                <button id="myBtn" type="submit" class="btn btn-success" formaction="/products/doctor_selected/{{userData.id}}/doctorName/Anuja Singh/doctorEmail/anujasingh9989@gmail.com/MBBS MD" formmethod="post">Select</button>
+                               
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+                
+            </table>
+
+
+
+        </form>
+    </div>
+
+     <div class="footer">
+            <a>Copyright © 2021 MoreCare Hospitals. All Rights Reserved</a>
+        </div>
+
+
+ 

@@ -1,0 +1,196 @@
+<title>MorCare | Prescription</title>
+<link rel="stylesheet" href="/stylesheets/prescription.css">
+<link rel="icon" href="/images/logo.png" type="image/png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="logos">
+            <a href="#"><img src="/images/logo.png" alt="More Care Logo" width="50px" height="40px"
+                    style="position: absolute;top:8px;left: 10px;"></a>
+            <a href="#"><img src="/images/morecare2.png" alt="More Care Name" width="150px" height="30px"
+                    style="position: absolute;top:15px;left: 70px;"></a>
+        </div>
+
+        <ul>
+            <li><a href="/products/dashboard/profile/{{userData.id}}"><i class="fas fa-home"
+                        style="margin-right: 10px;"></i>Home</a></li>
+            <li><a href="/products/dashboard/Personal/{{userData.id}}"><i class="fa fa-user"
+                        style="margin-right: 10px;"></i>Personal Information</a></li>
+            <li><a href="/products/dashboard/parameters/{{userData.id}}"><i class="fa fa-history"
+                        style="margin-right: 10px;"></i>Update
+                    Parameters</a></li>
+
+            <li><a href="#"><i class="fa fa-list" style="margin-right: 10px;"></i>Prescription</a></li>
+            <li><a href="/products/dashboard/notify/{{userData.id}}"><i class="fas fa-bell"
+                        style="margin-right: 2px;"></i>Notifications</a></li>
+            <li><a href="#"><i class="fa fa-edit" style="margin-right: 10px;"></i>Feedback</a></li>
+            <!-- <li><a href="#"><i class="fas fa-blog"></i>Blogs</a></li> -->
+            <!-- <li><a href="#"><i class="fas fa-address-book"></i>Contact</a></li> -->
+            <!-- <li><a href="#"><i class="fas fa-map-pin"></i>Map</a></li> -->
+        </ul>
+
+        <div class="social_media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div class="main_content">
+        <a href="/products/Signinas"
+            style="position: absolute;left:1360px; top:14px;color:white; text-decoration:none;font-size:18px;font-family:'Josefin Sans', sans-serif"
+            onclick="myFunction()">
+            <i class="fas fa-user-circle" style="color:white;font-size:25px;position:absolute;top:0px;left:-35px"></i>
+            {{userData.Name}}</a>
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="dashboard_name">Prescription</div>
+
+        <div class="info">
+            <div class="box" style="font-family:'Josefin Sans', sans-serif;font-size: 17px;">
+
+                {{!-- <form action="#">
+                    <h1 style="position: absolute;top: 100px;left: 300px;">No Notifications...</h1>
+                </form> --}}
+
+
+                <form
+                    action="/products/dashboard/patientinfoentered/{{userData.Email}}/{{userData.Name}}/{{userData.doctor_Name}}/{{userData.doctor_Email}}"
+                    method="post">
+
+                    <div class="pres_top">
+                        <span>MORE CARE HOSPITAL<span>
+                                <img src="/images/cross_logo.png" alt="Hospital Name" width="100" height="100">
+                                <h2>Dr. {{userData1.doctor_Name}}</h2>
+                                <h3>{{userData1.Degree}}</h3>
+                    </div>
+
+                    <div class="pres_Pat">
+                        <hr style="color: blue;width:764px;position:absolute;top:163px;left:81px">
+                        <span id="one">Patient Name : {{userData1.Name}}</span>
+                        <span id="two">Date: {{userData1.Date}}</span>
+                        <span id="three">Shift: {{userData1.Shift}}</span>
+                        <hr style="color: blue;width:764px;position:absolute;top:243px;left:81px">
+                    </div>
+
+                    <div class="form-group">
+                        {{!-- <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 290px;top: 323px;">HeartRate : </label> --}}
+                        <div class="prescription1" style="position: absolute;left: 85px;top:300px">
+                            <input type="text"
+                                style="width:600px;border:none;border-radius:0px"
+                                class="form-control" id="prescription1"  name="prescription1" value="{{userData1.prescription1}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{!-- <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 290px;top: 323px;">HeartRate : </label> --}}
+                        <div class="prescription2" style="position: absolute;left: 85px;top:370px">
+                            <input type="text"
+                                style="width:600px;border:none;border-radius:0px"
+                                class="form-control" id="prescription2" name="prescription2" value="{{userData1.prescription2}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        {{!-- <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 290px;top: 323px;">HeartRate : </label> --}}
+                        <div class="prescription3" style="position: absolute;left: 85px;top:440px">
+                            <input type="text"
+                                style="width:600px;border:none;border-radius:0px"
+                                class="form-control" id="prescription3" name="prescription3" value="{{userData1.prescription3}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{!-- <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 290px;top: 323px;">HeartRate : </label> --}}
+                        <div class="prescription4" style="position: absolute;left: 85px;top:510px">
+                            <input type="text"
+                                style="width:600px;border:none;border-radius:0px"
+                                class="form-control" id="prescription4" name="prescription4" value="{{userData1.prescription4}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{!-- <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 290px;top: 323px;">HeartRate : </label> --}}
+                        <div class="prescription5" style="position: absolute;left: 85px;top:580px">
+                            <input type="text"
+                                style="width:600px;border:none;border-radius:0px"
+                                class="form-control" id="prescription5" name="prescription5" value="{{userData1.prescription5}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="Temperature_label" for="Temperature"
+                            style="position: absolute; left: 95px; top:670px;color:#3377ca">Body Temperature </label>
+                        <div class="Temperature_input" style="position: absolute;left: 265px; top:671px">
+                            <label>: {{userData1.Temperature}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="Temperature"
+                                placeholder="Enter Body Temperature" name="Temperature"> --}}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="BloodPressure_label" for="BloodPressure"
+                            style="position: absolute; left: 95px;top: 700px;color:#3377ca">Blood Pressure </label>
+                        <div class="BloodPressure_input" style="position: absolute;left: 265px;top:701px">
+                            <label>: {{userData1.BloodPressure}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="BloodPressure"
+                                placeholder="Enter  Blood Pressure" name="BloodPressure"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 95px;top: 730px;color:#3377ca">HeartRate </label>
+                        <div class="HeartRate_input" style="position: absolute;left: 265px;top:731px">
+                            <label>: {{userData1.HeartRate}}</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="BreathRate_label" for="BreathRate"
+                            style="position: absolute; left: 95px;top: 760px;color:#3377ca">Breath Rate </label>
+                        <div class="BreathRate_input" style="position: absolute;left: 265px;top:761px">
+                            <label>: {{userData1.BreathRate}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="BreathRate"
+                                placeholder="Enter Breath Rate" name="BreathRate"> --}}
+                        </div>
+                    </div>
+
+                    <div class="pres_Bot">
+                        <span>Copyright © 2021 MoreCare Hospitals. All Rights Reserved<span>
+
+                    </div>
+                    
+
+
+                    {{!-- <div class="form-group text-center" style="position: absolute;left: 390px;top: 650px;">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">Save Changes</button>
+                    </div> --}}
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <a>Copyright © 2021 MoreCare Hospitals. All Rights Reserved</a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        alert("Are You Sure You Want To Log Out?");
+    }
+</script>

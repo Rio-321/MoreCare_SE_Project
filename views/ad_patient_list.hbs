@@ -1,0 +1,150 @@
+<title>MorCare | Patients</title>
+<link rel="stylesheet" href="/stylesheets/ad_patient_list.css">
+<link rel="icon" href="/images/logo.png" type="image/png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="logos">
+            <a href="#"><img src="/images/logo.png" alt="More Care Logo" width="50px" height="40px"
+                    style="position: absolute;top:8px;left: 10px;"></a>
+            <a href="#"><img src="/images/morecare2.png" alt="More Care Name" width="150px" height="30px"
+                    style="position: absolute;top:15px;left: 70px;"></a>
+        </div>
+
+        <ul>
+            <li><a href="/products/ad_dashboard/ad_home/{{userData.id}}"><i class="fas fa-home"
+                        style="margin-right: 10px;"></i>Home</a></li>
+
+            <li><a href="/products/ad_dashboard/doctorlist/{{userData.id}}"><i class="fa fa-user"
+                        style="margin-right: 10px;"></i>Doctor List</a></li>
+
+            <li><a href="#"><i class="fas fa-bell" style="margin-right: 2px;"></i>Patient List</a></li>
+
+           
+
+            <li><a href="/products/ad_dashboard/notify/{{userData.id}}"><i class="fas fa-bell"
+                        style="margin-right: 2px;"></i>Notifications</a></li>
+
+            <li><a href="#"><i class="fa fa-edit" style="margin-right: 10px;"></i>Feedback</a></li>
+
+        </ul>
+
+        <div class="social_media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div class="main_content">
+       <a href="/products/Signinas"
+            style="position: absolute;left:1360px; top:14px;color:white; text-decoration:none;font-size:18px;font-family:'Josefin Sans', sans-serif"
+            onclick="myFunction()">
+            <i class="fas fa-user-circle" style="color:white;font-size:25px;position:absolute;top:0px;left:-35px"></i>
+            {{userData.Name}}</a>
+
+
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="dashboard_name">Patients List</div>
+
+        <div class="info">
+            <div class="box" style="font-family:'Josefin Sans', sans-serif;font-size: 17px;">
+                <form action="/products/dashboard/patientinfoentered/{{userData.Email}}/{{userData.Name}}"
+                    method="post">
+                    <h1 style="position: absolute;top: 40px;left: 360px;">Patients List</h1>
+
+
+                    <table class="table" style="position: absolute; top:140px">
+                        <tr style="vertical-align: middle;">
+                            {{!-- <th>S.No.</th> --}}
+                            <th></th>
+                            <th></th>
+                            <th>Patient Name</th>
+                            <th>Patient Email</th>
+                            <th>Phone No</th>
+                            <th>Address</th>
+                           
+                            {{!-- <th>Degree</th> --}}
+                            {{!-- <th>Gender</th> --}}
+
+                        </tr>
+                        {{#each patient_list}}
+                        <tr>
+                            {{!-- <td id="id">{{this.id}}</td> --}}
+                            <td></td>
+                            <td></td>
+                            <td id="Name">{{this.Name}}</td>
+                            <td id="Email">{{this.Email}}</td>
+                            <td id="PhoneNo">{{this.PhoneNo}}</td>
+                            <td id="Address">{{this.Address}}</td>
+                           
+
+
+                            {{!-- <td id="Degree">{{this.Degree}}</td> --}}
+                            {{!-- <td id="Gender">{{this.Gender}}</td> --}}
+
+                            {{!-- <td> --}}
+                                {{!-- <a
+                                    onclick="javascript: form.action='/products/doctor_selected/doctor_Name/{{this.Name}}"
+                                    class="btn btn-info btn-sm">Select</a> --}}
+                                {{!-- <a href="/products/doctor_selected/{{userData.id}}/doctor_Name/{{this.Name}}"
+                                    class="btn btn-info btn-sm">Select</a> --}}
+                                {{!-- <button id="myBtn" type="submit"
+                                    formaction="/products/doctor_selected/{{userData.id}}/doctor_Name/{{this.Name}}"
+                                    formmethod="post">Select</button> --}}
+                                {{!-- <a href="/products/delete/{{this.id}}" class="btn btn-danger btn-sm">Delete</a>
+                                --}}
+                                {{!-- </td> --}}
+                        </tr>
+                        {{/each}}
+                    </table>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class="footer">
+            <a>Copyright © 2021 MoreCare Hospitals. All Rights Reserved</a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function myFunction(this_id, user_id) {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal({
+                        icon: "success",
+                        title: "Deleted!",
+                        text: "Data has been deleted!",
+                        icon: "success",
+                    });
+                    location.href="/products/ad_dashboard/delete-patientlist/" + this_id + "/admin-id/" + user_id;
+                   
+                }
+            });
+    }
+</script>
+
+<script>
+    function myFunction() {
+        alert("Are You Sure You Want To Log Out?");
+    }
+</script>

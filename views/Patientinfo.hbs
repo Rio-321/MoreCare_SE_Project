@@ -1,0 +1,97 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/stylesheets/Patientinfo.css">
+
+
+
+<div class="container contact-form">
+	{{!-- <div class="contact-image">
+		<img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
+	</div> --}}
+
+
+	<form class="form-horizontal" action="/products/patientinfoentered" method="post">
+		<h3>Daily Information{{userData.Name}}</h3>
+		<div class="row">
+			{{!-- <div class="col-md-6"> --}}
+				<div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="Name">Name :</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="Name" placeholder="Enter Name" name="Name">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="Date">Date :</label>
+						<div class="col-sm-10">
+							<input type="text" name="Date" class="form-control" placeholder="Enter Date" id="Date">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="Shift">Shift :</label>
+						<div class="col-sm-10">
+							<input type="text" name="Shift" class="form-control" placeholder="Enter Shift" id="Shift">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="Temperature">Body Temperature :</label>
+						<div class="col-sm-10" style="margin-top: 6px">
+							<input type="text" name="Temperature" class="form-control" placeholder="Enter Temperature"
+								id="Temperature">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="BloodPressure">Blood Pressure :</label>
+						<div class="col-sm-10" style="margin-top: 6px">
+							<input type="text" name="BloodPressure" class="form-control"
+								placeholder="Enter BloodPressure" id="BloodPressure">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="HeartRate">Heart Rate :</label>
+						<div class="col-sm-10">
+							<input type="text" name="HeartRate" class="form-control" placeholder="Enter HeartRate"
+								id="HeartRate">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="BreathRate">Breath Rate :</label>
+						<div class="col-sm-10">
+							<input type="text" name="BreathRate" class="form-control" placeholder="Enter BreathRate"
+								id="BreathRate">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="Description">Description :</label>
+						<div class="col-sm-10">
+							<textarea name="Description" class="form-control" placeholder="Enter Description(If You want to say something)"
+							style="width: 100%; height: 150px;"></textarea>
+						</div>
+						{{!-- <input type="text" name="Description" class="form-control" placeholder="Enter Description"> --}}
+					</div>
+					<br />
+					<div class="form-group text-center">
+						{{!-- <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" /> --}}
+						{{!-- <button type="submit" class="btn btn-success">SUBMIT</button> --}}
+						<button type="submit" name="btnSubmit" class="btnContact">SUBMIT</button>
+					</div>
+				</div>
+
+				{{!-- <div class="col-md-6">
+					<div class="form-group">
+						<textarea name="txtMsg" class="form-control" placeholder="Your Message *"
+							style="width: 100%; height: 150px;"></textarea>
+					</div>
+				</div> --}}
+			</div>
+	</form>
+</div>

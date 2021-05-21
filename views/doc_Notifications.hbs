@@ -1,0 +1,174 @@
+<title>MorCare | Notifications</title>
+<link rel="stylesheet" href="/stylesheets/doc_Notifications.css">
+<link rel="icon" href="/images/logo.png" type="image/png">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="logos">
+            <a href="#"><img src="/images/logo.png" alt="More Care Logo" width="50px" height="40px"
+                    style="position: absolute;top:8px;left: 10px;"></a>
+            <a href="#"><img src="/images/morecare2.png" alt="More Care Name" width="150px" height="30px"
+                    style="position: absolute;top:15px;left: 70px;"></a>
+        </div>
+
+        <ul>
+            <li><a href="/products/doc_dashboard/doc_profile/{{userData.id}}"><i class="fas fa-home"
+                        style="margin-right: 10px;"></i>Home</a></li>
+            <li><a href="/products/doc_dashboard/doc_Personal/{{userData.id}}"><i class="fa fa-user"
+                        style="margin-right: 10px;"></i>Personal
+                    Information</a></li>
+            <li><a href="/products/doc_dashboard/doc_patientlist/{{userData.id}}"><i class="fa fa-list"
+                        style="margin-right: 10px;"></i>Patients</a></li>
+            <li><a href="#"><i class="fas fa-bell" style="margin-right: 2px;"></i>Recent Parameters</a></li>
+            <li><a href="#"><i class="fa fa-edit" style="margin-right: 10px;"></i>Feedback</a></li>
+        </ul>
+
+        <div class="social_media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div class="main_content">
+        <a href="/products/Signinas"
+            style="position: absolute;left:1360px; top:14px;color:white; text-decoration:none;font-size:18px;font-family:'Josefin Sans', sans-serif"
+            onclick="myFunction()">
+            <i class="fas fa-user-circle" style="color:white;font-size:25px;position:absolute;top:0px;left:-35px"></i>
+            {{userData.Name}}</a>
+        <div class="header">Welcome!! Have a nice day.</div>
+        <div class="dashboard_name">Recent Parameters</div>
+
+        <div class="info">
+            <div class="box" style="font-family:'Josefin Sans', sans-serif;font-size: 17px;">
+
+                <h4 style="position: absolute;top: 10px;left: 150px; color:black">Recent health parameters are added by
+                    {{userData1.Name}}</h4>
+
+                <form action="/products/doc_dashboard/add_prescription/{{userData1.id}}/{{userData.id}}">
+
+                    <div class="form-group">
+                        <label class="Date_label" for="Date" style="position: absolute; right:180px; top: 80px;">Date
+                            :</label>
+                        <div class="Date_input" style="position: absolute;right:85px; top: 80px;">
+                            <label>{{userData1.Date}}</label>
+                            {{!-- <input type="text" class="form-control" id="Date" placeholder="Enter Date"
+                                name="Date"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="Shift_label" for="Shift"
+                            style="position: absolute; right:180px; top: 110px;">Shift :</label>
+                        <div class="Shift_input" style="position: absolute; right:110px; top: 110px;">
+                            <label>{{userData1.Shift}}</label>
+                            {{!-- <input type="text" name="Shift" class="form-control" placeholder="Enter Shift"
+                                id="Shift"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="Name_label" for="Name" style="position: absolute; left: 150px; top:130px;">Patient
+                            Name : </label>
+                        <div class="Name_input" style="position: absolute;left: 310px;top:130px">
+                            <label>{{userData1.Name}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" 3d="Name"
+                                placeholder="Enter Name" name="Name"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="Temperature_label" for="Temperature"
+                            style="position: absolute; left: 150px; top:180px;">Body Temperature : </label>
+                        <div class="Temperature_input" style="position: absolute;left: 310px; top:180px">
+                            <label>{{userData1.Temperature}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="Temperature"
+                                placeholder="Enter Body Temperature" name="Temperature"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="BloodPressure_label" for="BloodPressure"
+                            style="position: absolute; left: 150px;top: 230px;">Blood Pressure : </label>
+                        <div class="BloodPressure_input" style="position: absolute;left: 310px;top:230px">
+                            <label>{{userData1.BloodPressure}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="BloodPressure"
+                                placeholder="Enter  Blood Pressure" name="BloodPressure"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="HeartRate_label" for="HeartRate"
+                            style="position: absolute; left: 150px;top: 280px;">HeartRate : </label>
+                        <div class="HeartRate_input" style="position: absolute;left: 310px;top:280px">
+                            <label>{{userData1.HeartRate}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="HeartRate"
+                                placeholder="Enter Heart Rate" name="HeartRate"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="BreathRate_label" for="BreathRate"
+                            style="position: absolute; left: 150px;top: 330px;">Breath Rate : </label>
+                        <div class="BreathRate_input" style="position: absolute;left: 310px;top:330px">
+                            <label>{{userData1.BreathRate}}</label>
+                            {{!-- <input type="text" style="width:360px" class="form-control" id="BreathRate"
+                                placeholder="Enter Breath Rate" name="BreathRate"> --}}
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="Description_label" for="Description"
+                            style="position: absolute; left: 150px;top: 380px;">Description : </label>
+                        <div class="Description_input" style="position: absolute;left: 310px;top:380px;">
+                            <label>{{userData1.Description}}</label>
+                            {{!-- <textarea type="text" style="width:360px" class="form-control" id="Description"
+                                rows="4" cols="50" placeholder="Enter Description (if you want to say something)"
+                                name="Description"></textarea> --}}
+                        </div>
+                    </div>
+
+                    {{!-- <div class="form-group">
+                        <label class="prescription_label" for="prescription"
+                            style="position: absolute; left: 150px;top: 430px;">Prescription : </label>
+                        <div class="prescription_input" style="position: absolute;left: 310px;top:430px;">
+                            <textarea type="text" style="width:460px" class="form-control" id="prescription" rows="7"
+                                cols="50" placeholder="prescription" name="prescription"></textarea>
+                        </div>
+                    </div> --}}
+
+
+                    {{!-- <div class="form-group text-center" style="position: absolute;left: 190px;top: 650px;">
+                        <button type="submit" name="btnSubmit" class="btn btn-primary">ADD</button>
+                    </div> --}}
+
+                    <div class="form-group text-center" style="position: absolute;left: 390px;top: 500px;">
+                        <button class="btn btn-primary">
+                            Prescription</button>
+                        {{!-- <a href="/products/doc_dashboard/add_prescription/{{userData1.id}}/{{userData.id}}"
+                            class="button js-button" style="size: 30px;" role="button">Prescription</a> --}}
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <a>Copyright © 2021 MoreCare Hospitals. All Rights Reserved</a>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function myFunction() {
+        alert("Are You Sure You Want To Log Out?");
+    }
+</script>

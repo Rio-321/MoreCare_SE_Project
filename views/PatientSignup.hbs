@@ -1,0 +1,113 @@
+<title>Login Page</title>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+<!-- Bootsrap 4 CDN -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!--Fontawesome CDN-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<!--Custom styles-->
+<link rel="stylesheet" href="/stylesheets/PatientSignup.css">
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+<nav>
+  <a href="/products">HOME</a>
+  <a href="#">ABOUT</a>
+  <a href="#">SPECIALITIES</a>
+  <a href="#">GALLARY</a>
+  <a href="#">CONTACT</a>
+  <div id="indicator"></div>
+</nav>
+
+
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3>Create Account</h3>
+        <!-- <div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div> -->
+      </div>
+      <div class="card-body">
+
+        <form action="/products/patientsignedup" name="theForm" method="post" id="form_id">
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user"></i></span>
+            </div>
+            <input type="text" name="Name" class="form-control" placeholder="Enter Name" />
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-phone"></i></span>
+            </div>
+            <input type="text" name="PhoneNo" class="form-control" placeholder="Enter Phone No" />
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            </div>
+            <input type="Email" name="Email" id="email" class="form-control" placeholder="Email address">
+          </div>
+
+
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-birthday-cake"></i></span>
+            </div>
+            <input type="text" name="BirthDate" class="form-control" placeholder="Enter Date Of Birth">
+          </div>
+
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="Password" name="Password" id="password" class="form-control" placeholder="***********">
+          </div>
+
+          <div class="row align-items-center remember">
+            <input type="checkbox">Remember Me
+          </div>
+          <br />
+
+          <div class="form-group text-center">
+
+            <button onclick="myFunction(event)" class="btn btn-default login_btn">REGISTER</button>
+            {{!-- <button type="submit" onclick="myFunction(e)" class="btn btn-default login_btn">REGISTER</button> --}}
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+  function myFunction(event) {
+    event.preventDefault();
+      swal({
+        title: "Registration Completed",
+        text: "You have been succesfully registered!",
+        icon: "success",
+        button: "Enter!",
+      }).then(function () {
+        document.theForm.submit();
+      });
+  }
+
+</script>

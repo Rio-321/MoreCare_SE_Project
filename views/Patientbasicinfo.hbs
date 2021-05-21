@@ -1,0 +1,116 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/stylesheets/Patientbasicinfo.css">
+
+
+
+
+<div class="container contact-form">
+    {{!-- <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" Name 
+result 
+result.Name 
+userData 
+userData.Name />
+    </div> --}}
+
+    <form class="form-horizontal" action="/products/patientbasicinfoentered" method="post">
+    
+        {{!-- <h3>Welcome {{userData.Name}}, {{message}},{{userData.ID}} Basic Information {{title}}</h3> --}}
+        <h3>Basic Information</h3>
+        <div class="row">
+                  {{!-- <div class="col-md-6"> --}}
+                <div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Name">Name :</label>
+                        <div class="col-sm-10">
+                            {{!-- <label style="color: #555; padding-top: 7px">{{userData.Name}}</label> --}}
+                            {{!-- <input type="text" class="form-control" id="Name" placeholder="Enter Name" name="Name" value={{userData.Name}}> --}}
+                            <input type="text" class="form-control" id="Name" placeholder="Enter Name" name="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="PhoneNo">Phone No :</label>
+                        <div class="col-sm-10">
+                            {{!-- <label style="color: #555; padding-top: 7px">{{userData.Name}}</label> --}}
+                            <input type="text" name="PhoneNo" class="form-control" placeholder="Enter Phone No" id="PhoneNo">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Email">Email :</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Email" class="form-control" placeholder="Enter Email" id="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="BirthDate">Date Of Birth:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="BirthDate" class="form-control" placeholder="Enter Date Of Birth">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="BloodGroup">Blood Group:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="BloodGroup" class="form-control" placeholder="Enter Blood Group"
+                                id="BloodGroup">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Height">Height :</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Height" class="form-control" placeholder="Enter Height"
+                                id="Height" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Weight">Weight :</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Weight" class="form-control" placeholder="Enter Weight"
+                                id="Weight" />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="Address">Address:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Address" class="form-control" placeholder="Enter Address"
+                                id="Address" />
+                        </div>
+                    </div>
+
+
+                    
+                    <br />
+                    <div class="form-group text-center">
+                        {{!-- <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" /> --}}
+                        {{!-- <button type="submit" class="btn btn-success">SUBMIT</button> --}}
+                        <button type="submit" name="btnSubmit" class="btnContact">SUBMIT</button>
+                    </div>
+
+                </div>
+
+                {{!-- <div class="col-md-6">
+                    <div class="form-group">
+                        <textarea name="txtMsg" class="form-control" placeholder="Your Message *"
+                            style="width: 100%; height: 150px;"></textarea>
+                    </div>
+                </div> --}}
+            </div>    
+    </form>
+      
+</div>
+
+
+
+
+
