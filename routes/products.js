@@ -330,8 +330,8 @@ router.post('/patientsignedup', function (req, res, next) {
   var mailOptions = {
     from: 'morecarehospitals@gmail.com',
     // to: 'iit2019020@iiita.ac.in , iit2019022@iiita.ac.in, iit2019024@iiita.ac.in, iit2019063@iiita.ac.in ',
-    to: 'swarajbhosle321@gmail.com',
-    // to: Email,
+//     to: 'swarajbhosle321@gmail.com',
+    to: Email,
     subject: 'Patient Signup | Morecare Hospitals',
     // text: 'Sign in krne pe automatically email send ho rha bhai..jis mail id se sign in kiya hain usse mail jaa rha ',
     text:  `Dear ${Name}\nWelcome to MoreCare Hospitals.\nYou have been signed up to the More Care Hospitals`
